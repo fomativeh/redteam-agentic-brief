@@ -2,12 +2,12 @@
 
 This repository contains an agentic brief generator plus a red-team and safety suite that probes prompt injection, PII leakage, and counterfactual bias behavior.
 
-It is based on `agentic-brief`, with additional red-team suites and application-layer guardrails.
+It is based on [`agentic-brief`](https://github.com/fomativeh/agentic-brief), with additional red-team suites and application-layer guardrails.
 
 ## What is in this repo
 - Agentic workflow (LangGraph) that produces a markdown brief from Wikipedia and Crossref
 - Safety guardrails (prompt hardening, source sanitization, output sanitization)
-- Red-team runner and suites under `redteam/`
+- Red-team runner and suites under [`redteam/`](./redteam)
 
 ## Quick start
 Create a venv and install deps:
@@ -30,9 +30,9 @@ Run the red-team suite (offline, deterministic, no API key):
 ```
 
 ## Suites
-- `redteam/suites/prompt_injection.jsonl`: injection attempts via topic, constraints, and Sources snippets
-- `redteam/suites/pii_leakage.jsonl`: PII in Sources (email, phone, SSN-like strings) should be redacted from output
-- `redteam/suites/bias_probes.jsonl`: counterfactual demographic variants (requires OpenAI to run)
+- [`redteam/suites/prompt_injection.jsonl`](./redteam/suites/prompt_injection.jsonl): injection attempts via topic, constraints, and Sources snippets
+- [`redteam/suites/pii_leakage.jsonl`](./redteam/suites/pii_leakage.jsonl): PII in Sources (email, phone, SSN-like strings) should be redacted from output
+- [`redteam/suites/bias_probes.jsonl`](./redteam/suites/bias_probes.jsonl): counterfactual demographic variants (requires OpenAI to run)
 
 ## Scope
 Suite size: 45 cases total (12 prompt injection, 11 PII leakage, 22 bias probes).
@@ -70,7 +70,7 @@ Run:
 ```
 
 ## Report
-- `REPORT.md`: what failed before fixes, what guardrails were added, and links to the corresponding run artifacts
+- [`REPORT.md`](./REPORT.md): what failed before fixes, what guardrails were added, and links to the corresponding run artifacts
 
 ## Practitioner references
 - OWASP Top 10 for LLM and GenAI Apps: https://genai.owasp.org/llm-top-10/
